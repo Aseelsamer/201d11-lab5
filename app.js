@@ -55,9 +55,22 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var result=a+b+c;
-    var product=a*b*c;
-    return[result,product,`${a} and ${b} and ${c} sum to 16.`,`The product of ${a} and ${b} and ${c} is 140.`];
+   var sumAB = sum(a,b).shift();
+   var sumABC = sum(sumAB,c).shift();
+   var message1 = `${a} and ${b} and ${c} sum to ${sumABC}.`;
+
+   var multiAB = multiply(a,b).shift();
+   var multiABC = multiply(multiAB,c).shift();
+   var message2 = `The product of ${a} and ${b} and ${c} is ${multiABC}.`;
+
+   console.log(message1,message2 );
+
+   return [sumABC , multiABC , message1 , message2];
+
+
+    // var result=a+b+c;
+    // var product=a*b*c;
+    // return[result,product,`${a} and ${b} and ${c} sum to 16.`,`The product of ${a} and ${b} and ${c} is 140.`];
 
 }
 
@@ -81,9 +94,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-    var sum=9;
-    return[sum,`2,3,4 was passed in as an array of numbers, and 9 is their sum.`];
 
+    var sumDE =sum(d,e).shift();
+    var sumDEF =sum(sumDE,F).shift();
+    var message3=`${a},${b},${c} was passed in as an array of numbers, and ${sumDEF} is their sum.`;
+
+    console.log(message3);
+    return[sumDEF,message3];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -104,6 +121,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    //var multiAB = multiply(a,b).shit();
+    //var multiABC = multiply(multiAB,c).shift();
+    //var message = `The numbers 2,3,4 have a product of 24.`
+
+    //return[multiABC,message];
 
 }
 
@@ -133,7 +155,12 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    //var multiAB=multiply(a,b).shit();
+//var multiCD=multiply(c,d).shift();
+//var multiABCD=multiply(multiAB,multiCD);
+//var multiABCDE=multiply(multiABCD,e);
 
+/
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
